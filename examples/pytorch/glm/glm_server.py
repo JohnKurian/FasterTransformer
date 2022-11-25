@@ -155,6 +155,15 @@ def tokenize(contexts, pad = True):
         return start_ids, start_lengths, torch.IntTensor(mask_positions)
     
     return get_ids(contexts)
+  
+  
+@app.route("/ping", methods=["GET"])
+def ping():
+    """Determine if the container is working and healthy. In this sample container, we declare
+    it healthy if we can load the model successfully."""
+    status = 200 
+    return flask.Response(response="\n", status=status, mimetype="application/json")
+  
 
 @app.route('/tokenize', methods=["POST"])
 def get_tokenize():
