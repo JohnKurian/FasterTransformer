@@ -265,7 +265,8 @@ if __name__ == "__main__":
         except:
             regix = None
             
-        end_tokens = [tokenizer.get_command("eop"), tokenizer.get_command("eos")]
+        end_tokens = [tokenizer.get_command("eop"), tokenizer.get_command("eos"), 145875]
+        print('adding ### to end_tokens')
         batch_size = start_ids.shape[0]
 
         if sampling_strategy == "BaseStrategy":
